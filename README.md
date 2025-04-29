@@ -1,9 +1,5 @@
 # 📡 Morse Code Translator
 
-![GitHub repo size](https://img.shields.io/github/repo-size/OneTeraByte7/Morse-Code-Translator)
-![GitHub contributors](https://img.shields.io/github/contributors/OneTeraByte7/Morse-Code-Translator)
-![GitHub last commit](https://img.shields.io/github/last-commit/OneTeraByte7/Morse-Code-Translator)
-![GitHub top language](https://img.shields.io/github/languages/top/OneTeraByte7/Morse-Code-Translator)
 ![Project Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 ---
