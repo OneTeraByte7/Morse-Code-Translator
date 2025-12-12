@@ -14,6 +14,13 @@ MORSE_DICT = {
 DATA_FILE = Path(__file__).with_name("data.txt")
 STAR_LINE = "*" * 50
 EQUAL_LINE = "=" * 50
+SAMPLE_PHRASES = [
+    "HELLO WORLD",
+    "SOS",
+    "PYTHON",
+    "MORSE CODE",
+    "FIRST YEAR"
+]
 
 
 def ensure_data_file() -> None:
@@ -59,6 +66,21 @@ def show_supported_characters() -> None:
         print(line)
 
 
+def show_instructions() -> None:
+    print("\n--- How to Use ---")
+    print("1. Pick option 1 for text to Morse. Letters are converted automatically.")
+    print("2. Pick option 2 for Morse to text. Separate each letter with a space.")
+    print("3. Use '/' between words in Morse so the app knows there is a gap.")
+    print("4. Only basic characters are supported. Check option 3 for the full list.")
+
+
+def show_examples() -> None:
+    print("\n--- Sample Conversions ---")
+    for phrase in SAMPLE_PHRASES:
+        coded = text_to_morse(phrase)
+        print(f"{phrase} -> {coded}")
+
+
 def read_history() -> None:
     data = DATA_FILE.read_text(encoding='utf-8').strip()
     if not data:
@@ -79,6 +101,8 @@ def menu() -> None:
     print("2. Convert Morse to Text")
     print("3. Show Supported Characters")
     print("4. View Saved History")
+    print("5. Read Instructions")
+    print("6. View Sample Conversions")
     print("0. Exit")
     print(EQUAL_LINE)
 
@@ -90,7 +114,7 @@ def main() -> None:
     print(STAR_LINE)
     while True:
         menu()
-        choice = input("Enter your choice (0-4): ").strip()
+        choice = input("Enter your choice (0-6): ").strip()
         if choice == '0':
             print("Thanks for using the translator. Bye!")
             break
@@ -116,6 +140,10 @@ def main() -> None:
             show_supported_characters()
         elif choice == '4':
             read_history()
+        elif choice == '5':
+            show_instructions()
+        elif choice == '6':
+            show_examples()
         else:
             print("Invalid choice. Try again.")
 
